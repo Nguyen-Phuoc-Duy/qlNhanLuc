@@ -42,6 +42,8 @@ namespace qlNhanLuc
             this.btnBaocao = new System.Windows.Forms.Button();
             this.btnNhap = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.btnQuaylai = new System.Windows.Forms.Button();
+            this.btnNhanvien = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrPhongban)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,6 +144,7 @@ namespace qlNhanLuc
             this.btnBaocao.TabIndex = 84;
             this.btnBaocao.Text = "Báo cáo";
             this.btnBaocao.UseVisualStyleBackColor = true;
+            this.btnBaocao.Click += new System.EventHandler(this.btnBaocao_Click);
             // 
             // btnNhap
             // 
@@ -164,11 +167,33 @@ namespace qlNhanLuc
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
+            // btnQuaylai
+            // 
+            this.btnQuaylai.Location = new System.Drawing.Point(214, 194);
+            this.btnQuaylai.Name = "btnQuaylai";
+            this.btnQuaylai.Size = new System.Drawing.Size(75, 23);
+            this.btnQuaylai.TabIndex = 89;
+            this.btnQuaylai.Text = "Quay lại";
+            this.btnQuaylai.UseVisualStyleBackColor = true;
+            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
+            // 
+            // btnNhanvien
+            // 
+            this.btnNhanvien.Location = new System.Drawing.Point(214, 151);
+            this.btnNhanvien.Name = "btnNhanvien";
+            this.btnNhanvien.Size = new System.Drawing.Size(75, 23);
+            this.btnNhanvien.TabIndex = 90;
+            this.btnNhanvien.Text = "Nhân viên";
+            this.btnNhanvien.UseVisualStyleBackColor = true;
+            this.btnNhanvien.Click += new System.EventHandler(this.btnNhanvien_Click);
+            // 
             // Phongban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 400);
+            this.Controls.Add(this.btnNhanvien);
+            this.Controls.Add(this.btnQuaylai);
             this.Controls.Add(this.btnNhap);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnBoqua);
@@ -203,5 +228,7 @@ namespace qlNhanLuc
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btnNhap;
         private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnQuaylai;
+        private System.Windows.Forms.Button btnNhanvien;
     }
 }

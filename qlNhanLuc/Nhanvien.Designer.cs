@@ -30,6 +30,13 @@ namespace qlNhanLuc
         private void InitializeComponent()
         {
             this.dgrNhanvien = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnBoqua = new System.Windows.Forms.Button();
             this.btnTimkiem = new System.Windows.Forms.Button();
@@ -49,13 +56,8 @@ namespace qlNhanLuc
             this.label3 = new System.Windows.Forms.Label();
             this.txtHoten = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnQuaylai = new System.Windows.Forms.Button();
+            this.btnPhongban = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrNhanvien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +76,54 @@ namespace qlNhanLuc
             this.dgrNhanvien.Name = "dgrNhanvien";
             this.dgrNhanvien.Size = new System.Drawing.Size(675, 161);
             this.dgrNhanvien.TabIndex = 82;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "sManhanvien";
+            this.Column1.HeaderText = "Mã NV";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 70;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "sHoten";
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "bGioitinh";
+            this.Column7.HeaderText = "Giới tính";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 80;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "tNgaysinh";
+            this.Column5.HeaderText = "Ngày sinh";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 80;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "sDienthoai";
+            this.Column4.HeaderText = "Điện thoại";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 80;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "sDiachi";
+            this.Column6.HeaderText = "Địa chỉ";
+            this.Column6.Name = "Column6";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "sMaphongban";
+            this.Column3.HeaderText = "Mã PB";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 70;
             // 
             // btnXoa
             // 
@@ -113,6 +163,7 @@ namespace qlNhanLuc
             this.btnBaocao.TabIndex = 78;
             this.btnBaocao.Text = "Báo cáo";
             this.btnBaocao.UseVisualStyleBackColor = true;
+            this.btnBaocao.Click += new System.EventHandler(this.btnBaocao_Click);
             // 
             // btnSua
             // 
@@ -248,59 +299,33 @@ namespace qlNhanLuc
             this.label1.TabIndex = 63;
             this.label1.Text = "Họ tên";
             // 
-            // Column1
+            // btnQuaylai
             // 
-            this.Column1.DataPropertyName = "sManhanvien";
-            this.Column1.HeaderText = "Mã NV";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 70;
+            this.btnQuaylai.Location = new System.Drawing.Point(617, 24);
+            this.btnQuaylai.Name = "btnQuaylai";
+            this.btnQuaylai.Size = new System.Drawing.Size(75, 23);
+            this.btnQuaylai.TabIndex = 83;
+            this.btnQuaylai.Text = "Quay lại";
+            this.btnQuaylai.UseVisualStyleBackColor = true;
+            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
             // 
-            // Column2
+            // btnPhongban
             // 
-            this.Column2.DataPropertyName = "sHoten";
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "bGioitinh";
-            this.Column7.HeaderText = "Giới tính";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "tNgaysinh";
-            this.Column5.HeaderText = "Ngày sinh";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 80;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "sDienthoai";
-            this.Column4.HeaderText = "Điện thoại";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 80;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "sDiachi";
-            this.Column6.HeaderText = "Địa chỉ";
-            this.Column6.Name = "Column6";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "sMaphongban";
-            this.Column3.HeaderText = "Mã PB";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 70;
+            this.btnPhongban.Location = new System.Drawing.Point(536, 24);
+            this.btnPhongban.Name = "btnPhongban";
+            this.btnPhongban.Size = new System.Drawing.Size(75, 23);
+            this.btnPhongban.TabIndex = 84;
+            this.btnPhongban.Text = "Phòng ban";
+            this.btnPhongban.UseVisualStyleBackColor = true;
+            this.btnPhongban.Click += new System.EventHandler(this.btnPhongban_Click);
             // 
             // Nhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 450);
+            this.Controls.Add(this.btnPhongban);
+            this.Controls.Add(this.btnQuaylai);
             this.Controls.Add(this.dgrNhanvien);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnBoqua);
@@ -359,5 +384,7 @@ namespace qlNhanLuc
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button btnQuaylai;
+        private System.Windows.Forms.Button btnPhongban;
     }
 }

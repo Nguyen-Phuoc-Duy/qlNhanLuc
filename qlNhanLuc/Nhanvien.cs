@@ -67,7 +67,7 @@ namespace qlNhanLuc
             {
                 if (kiemtraMPB() == 0)
                 {
-                    MessageBox.Show("Chưa có mã phòng ban, bạn phải nhập mã phòng ban", "Thông báo");
+                    MessageBox.Show("Không có mã phòng ban này, bạn phải nhập mã phòng ban", "Thông báo");
                     txtMaphongban.Focus();
                     Phongban fPhongban = new Phongban();
                     fPhongban.Show();
@@ -216,6 +216,46 @@ namespace qlNhanLuc
                     }
                 }
             }
+        }
+
+        private void btnBaocao_Click(object sender, EventArgs e)
+        {
+            string filter = "{tblNhanvien.sManhanvien} > 0";
+            if (!string.IsNullOrEmpty(txtHoten.Text.Trim()))
+                filter += string.Format(" AND {1} LIKE '*{0}*'"
+                    , txtHoten.Text
+                    , "{tblNhanvien.sHoten}");
+            if (!string.IsNullOrEmpty(txtDienthoai.Text.Trim()))
+                filter += string.Format(" AND {1} LIKE '*{0}*'"
+                    , txtDienthoai.Text
+                    , "{tblNhanvien.sDienthoai}");
+
+            ///hienthi report
+
+            frmReportsViewer reportViewerform = Program.findOpenForm("frmReportsViewer") as frmReportsViewer;
+            if (reportViewerform == null)
+                reportViewerform = new frmReportsViewer();
+            reportViewerform.Show();
+            reportViewerform.ShowReport("Nhanvien.rpt"
+                , filter
+                , "Danh sach Nhan vien");
+            reportViewerform.Activate();
+        }
+
+        private void btnQuaylai_Click(object sender, EventArgs e)
+        {
+            Form1 fForm1 = new Form1();
+            //this.Hide();
+            fForm1.Show();
+            Visible = false;
+        }
+
+        private void btnPhongban_Click(object sender, EventArgs e)
+        {
+            Phongban fPhongban = new Phongban();
+            //this.Hide();
+            fPhongban.Show();
+            Visible = false;
         }
     }
 }
