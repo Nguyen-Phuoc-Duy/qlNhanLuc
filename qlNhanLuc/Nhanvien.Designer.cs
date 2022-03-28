@@ -269,9 +269,11 @@ namespace qlNhanLuc
             // 
             this.dtpNgaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaysinh.Location = new System.Drawing.Point(101, 63);
+            this.dtpNgaysinh.MaxDate = new System.DateTime(2022, 7, 31, 0, 0, 0, 0);
             this.dtpNgaysinh.Name = "dtpNgaysinh";
             this.dtpNgaysinh.Size = new System.Drawing.Size(163, 20);
             this.dtpNgaysinh.TabIndex = 68;
+            this.dtpNgaysinh.Value = new System.DateTime(2022, 3, 28, 0, 0, 0, 0);
             // 
             // label3
             // 

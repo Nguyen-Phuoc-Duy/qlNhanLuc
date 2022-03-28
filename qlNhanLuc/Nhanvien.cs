@@ -192,6 +192,11 @@ namespace qlNhanLuc
                 filter += string.Format(" AND sHoten LIKE '%{0}%'", txtHoten.Text);
             if (!string.IsNullOrEmpty(txtDienthoai.Text.Trim()))
                 filter += string.Format(" AND sDienthoai LIKE '%{0}%'", txtDienthoai.Text);
+            //if (!string.IsNullOrEmpty(txtDiachi.Text.Trim()))
+            //    filter += string.Format(" AND sDiachi LIKE '%{0}%'", txtDiachi.Text);
+            //if (!string.IsNullOrEmpty(txtMaphongban.Text.Trim()))
+            //    filter += string.Format(" AND sMaphongban LIKE '%{0}%'", txtMaphongban.Text);
+            
             hienNhanvien(filter);
         }
 
@@ -229,6 +234,14 @@ namespace qlNhanLuc
                 filter += string.Format(" AND {1} LIKE '*{0}*'"
                     , txtDienthoai.Text
                     , "{tblNhanvien.sDienthoai}");
+            if (!string.IsNullOrEmpty(txtDiachi.Text.Trim()))
+                filter += string.Format(" AND {1} LIKE '*{0}*'"
+                    , txtDiachi.Text
+                    , "{tblNhanvien.sDiachi}");
+            if (!string.IsNullOrEmpty(txtMaphongban.Text.Trim()))
+                filter += string.Format(" AND {1} LIKE '*{0}*'"
+                    , txtDienthoai.Text
+                    , "{tblNhanvien.sMaphongban}");
 
             ///hienthi report
 
