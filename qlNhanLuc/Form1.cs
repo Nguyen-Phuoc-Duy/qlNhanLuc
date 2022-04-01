@@ -33,6 +33,7 @@ namespace qlNhanLuc
             //this.Hide();
             fPhongban.Show(); 
             Visible = false;
+            //toi la duy
         }
     }
 }
